@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Onur Sarıyıldız, Design Group Project Manager. 18 years of design and construction management across Russia, Turkey and the CIS.">
+<meta name="color-scheme" content="light dark">
+<link rel="preload" as="image" href="img/dm-apartments/01-river-reflection-wide.webp">
+<title>Onur Sarıyıldız Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400..700&display=swap">
+<style>
+/* Layout: photo-led portfolio. Full-bleed hero, figures strip, current project spec sheet, project grid with lightbox, experience, competitions, profile. */
+:root{
+  --bg:#F4F4F1; --surface:#FFFFFF; --ink:#121416; --mute:#62686F; --line:#DEDED9; --accent:#2F4BD8;
+  --tile-a:#1C2433; --tile-b:#34446E; --on-photo:#FFFFFF;
+  --font:"Hanken Grotesk","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D0F11; --surface:#15181B; --ink:#ECEDEE; --mute:#9BA1A7; --line:#25292D; --accent:#93A6FF; --tile-a:#141A26; --tile-b:#2A375C; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D0F11; --surface:#15181B; --ink:#ECEDEE; --mute:#9BA1A7; --line:#25292D; --accent:#93A6FF; --tile-a:#141A26; --tile-b:#2A375C; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+[hidden]{display:none !important}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:clamp(16px,4vw,48px)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.label{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+
+/* nav */
+.nav{position:absolute;inset:0 0 auto 0;z-index:4;padding-top:env(safe-area-inset-top,0px)}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:22px}
+.nav .mark{font-weight:700;font-size:17px;color:var(--on-photo);text-decoration:none}
+.nav ul{display:flex;gap:clamp(14px,3vw,32px);list-style:none;margin:0;padding:0}
+.nav li a{color:var(--on-photo);opacity:.85;text-decoration:none;font-size:14px;font-weight:500}
+.nav li a:hover{opacity:1}
+@media (max-width:560px){.nav li:nth-child(n+3){display:none}}
+
+/* hero */
+.hero{position:relative;min-height:clamp(560px,82vh,820px);display:flex;align-items:flex-end;color:var(--on-photo);overflow:hidden;background:linear-gradient(135deg,var(--tile-a),var(--tile-b))}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .slides img{opacity:0;transform:scale(1.06);transition:opacity 1.8s ease,transform 9s linear}
+.hero .slides img.on{opacity:1;transform:scale(1)}
+.credit{transition:opacity .6s}
+@media (prefers-reduced-motion:reduce){.hero .slides img{transform:none;transition:opacity 1.2s ease}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.15) 55%,rgba(0,0,0,.72) 100%)}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-block:0 clamp(36px,6vw,64px)}
+.hero .kicker{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.hero h1{font-weight:600;font-size:clamp(46px,9vw,116px);line-height:.95;letter-spacing:-.03em;margin:14px 0 18px;text-wrap:balance}
+.hero p{max-width:56ch;margin:0;font-size:clamp(16px,1.8vw,19px);opacity:.92}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 15px var(--font);padding:13px 22px;border-radius:999px;text-decoration:none;border:1px solid transparent;cursor:pointer}
+.btn.solid{background:#fff;color:#121416}
+.btn.ghost{border-color:rgba(255,255,255,.6);color:var(--on-photo);background:transparent}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+.credit{position:absolute;right:clamp(16px,4vw,48px);bottom:16px;z-index:2;font-size:12px;opacity:.75}
+@media (max-width:640px){.credit{display:none}}
+
+/* figures */
+.figures{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-bottom:1px solid var(--line)}
+.fig{padding:28px 16px 26px 0}
+.fig b{display:block;font-weight:600;font-size:clamp(26px,3.2vw,40px);letter-spacing:-.02em;line-height:1.05;font-variant-numeric:tabular-nums}
+.fig span{display:block;margin-top:6px;font-size:13px;color:var(--mute);line-height:1.35}
+@media (max-width:900px){.figures{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:480px){.figures{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+section{padding-block:clamp(56px,8vw,104px)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:32px}
+h2{font-weight:600;font-size:clamp(32px,5vw,60px);letter-spacing:-.025em;line-height:1;margin:8px 0 0;text-wrap:balance}
+
+/* current */
+.current{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:clamp(24px,4vw,48px)}
+.current h3{font-weight:600;font-size:clamp(28px,4vw,44px);letter-spacing:-.025em;line-height:1.05;margin:10px 0 14px}
+.current p{color:var(--mute);margin:0 0 14px}
+.now-photo{grid-column:1/-1;margin:calc(-1*clamp(24px,4vw,48px)) calc(-1*clamp(24px,4vw,48px)) 0;border-radius:var(--r) var(--r) 0 0;overflow:hidden;aspect-ratio:16/8}
+.now-photo img{width:100%;height:100%;object-fit:cover;display:block}
+@media (max-width:860px){.now-photo{aspect-ratio:4/3}}
+.pill{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.pill::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.current ul{margin:18px 0 0;padding-left:18px;font-size:15px}
+.current ul li+li{margin-top:6px}
+.conf{font-size:13px;color:var(--mute)}
+.spec{margin:0;display:grid;grid-template-columns:auto 1fr}
+.spec dt,.spec dd{padding:11px 0;border-bottom:1px solid var(--line);font-size:15px}
+.spec dt{color:var(--mute);padding-right:20px}
+.spec dd{margin:0;text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.spec dd small{display:block;font-weight:400;color:var(--mute);font-size:13px}
+@media (max-width:860px){.current{grid-template-columns:minmax(0,1fr)}}
+
+/* filters */
+.tabs{display:flex;flex-wrap:wrap;gap:8px}
+.tab{font:500 14px var(--font);padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.tab:hover{border-color:var(--mute)}
+.tab[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.2vw,28px)}
+@media (max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.grid{grid-template-columns:minmax(0,1fr)}}
+.card{all:unset;display:flex;flex-direction:column;gap:12px;cursor:pointer;min-width:0}
+.card[hidden]{display:none !important}
+.card:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:var(--r)}
+.media{position:relative;aspect-ratio:4/3;max-width:100%;border-radius:var(--r);overflow:hidden;background:linear-gradient(135deg,var(--tile-a),var(--tile-b))}
+.media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.card:hover .media img{transform:scale(1.04)}
+.badge{position:absolute;top:14px;left:14px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:rgba(10,12,14,.62);color:#fff;padding:5px 10px;border-radius:999px;backdrop-filter:blur(6px)}
+.count{position:absolute;bottom:14px;right:14px;font-size:12px;background:rgba(10,12,14,.62);color:#fff;padding:4px 9px;border-radius:999px}
+.card h3{font-weight:600;font-size:21px;letter-spacing:-.015em;line-height:1.2;margin:0}
+.card .sub{font-size:14px;color:var(--accent);margin-top:-6px}
+.card .meta{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--mute)}
+.card .meta span:last-child{white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:20;background:var(--bg);display:grid;grid-template-columns:minmax(0,1fr) 380px;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.stage{position:relative;background:#0A0B0C;display:flex;flex-direction:column;min-width:0;min-height:0}
+.stage .big{flex:1;min-height:0;position:relative}
+.stage .big img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.cap{position:absolute;left:16px;bottom:12px;z-index:2;font-size:12px;color:#fff;background:rgba(0,0,0,.55);padding:4px 10px;border-radius:999px;max-width:calc(100% - 32px)}
+.arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.14);color:#fff;font-size:20px;cursor:pointer}
+.arrow:hover{background:rgba(255,255,255,.26)}
+.arrow.prev{left:16px}.arrow.next{right:16px}
+.thumbs{display:flex;gap:8px;padding:12px;overflow-x:auto}
+.thumbs button{flex:0 0 auto;width:84px;height:58px;border-radius:8px;overflow:hidden;border:2px solid transparent;padding:0;background:#222;cursor:pointer;opacity:.6}
+.thumbs button[aria-current="true"]{border-color:#fff;opacity:1}
+.thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.info{overflow-y:auto;padding:clamp(24px,3vw,36px);border-left:1px solid var(--line);background:var(--surface)}
+.close{float:right;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--ink);font-size:18px;cursor:pointer}
+.info h3{font-weight:600;font-size:30px;letter-spacing:-.025em;line-height:1.05;margin:12px 0 6px;clear:both}
+.info .lb-sub{color:var(--accent);margin:0 0 4px;font-size:15px}
+.info .where{color:var(--mute);margin:0 0 22px}
+.info .spec dt,.info .spec dd{font-size:14.5px;padding:10px 0}
+.info ul{margin:20px 0 0;padding-left:18px;font-size:14.5px}
+.info li+li{margin-top:6px}
+.info .note{margin:18px 0 0;font-size:13px;color:var(--mute)}
+@media (max-width:860px){.lb{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(260px,52vh) minmax(0,1fr)}.info{border-left:0;border-top:1px solid var(--line)}}
+
+/* map */
+.mapbox{position:relative;height:clamp(380px,56vw,600px);border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.mapbox p{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;margin:0;color:var(--mute);font-size:14px;text-align:center;padding:16px}
+.mapbox iframe{position:relative;width:100%;height:100%;border:0;display:block}
+.places{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 28px}
+@media (max-width:900px){.places{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.places{grid-template-columns:minmax(0,1fr)}}
+.places li{display:flex;gap:12px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line);min-width:0}
+.places .n{flex:0 0 26px;height:26px;border-radius:50%;background:var(--tile-b);color:#fff;font-size:12px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;transform:translateY(-2px)}
+.places a{text-decoration:none;font-weight:600;font-size:15px}
+.places a:hover{color:var(--accent)}
+.places small{display:block;color:var(--mute);font-size:13px;font-weight:400}
+
+/* experience */
+.exp{border-top:1px solid var(--line)}
+.job{display:grid;grid-template-columns:180px minmax(0,1fr) minmax(0,1.2fr);gap:24px;padding-block:22px;border-bottom:1px solid var(--line)}
+.job .when{font-size:14px;color:var(--mute);padding-top:3px;font-variant-numeric:tabular-nums}
+.job h3{margin:0;font-weight:600;font-size:20px;letter-spacing:-.01em;line-height:1.25}
+.job .firm{color:var(--mute);font-size:14.5px;margin-top:2px}
+.job p{margin:0;font-size:15px;color:var(--mute)}
+@media (max-width:820px){.job{grid-template-columns:minmax(0,1fr);gap:6px}}
+
+/* profile */
+.cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
+@media (max-width:980px){.cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.cols{grid-template-columns:minmax(0,1fr)}}
+.cols h3{margin:0 0 12px}
+.cols ul{list-style:none;margin:0;padding:0;font-size:15px}
+.cols li{padding:7px 0;border-bottom:1px solid var(--line)}
+.cols li small{display:block;color:var(--mute);font-size:13px}
+
+/* contact */
+.contact{background:var(--ink);color:var(--bg);border-radius:var(--r);padding:clamp(32px,6vw,72px);display:grid;gap:24px}
+.contact .label{color:inherit;opacity:.65}
+.contact .mail{font-weight:600;font-size:clamp(26px,5.4vw,64px);letter-spacing:-.025em;line-height:1;word-break:break-all;user-select:all}
+.contact .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.contact .btn{background:var(--bg);color:var(--ink)}
+.contact small{opacity:.7;font-size:14px}
+.phones{display:flex;flex-wrap:wrap;gap:16px 48px}
+.phones div{display:flex;flex-direction:column;gap:4px}
+.phones a{color:inherit;text-decoration:none;font-weight:600;font-size:clamp(20px,2.6vw,28px);letter-spacing:-.01em;font-variant-numeric:tabular-nums;user-select:all}
+.phones a:hover{text-decoration:underline}
+footer{padding-block:28px 40px;font-size:13px;color:var(--mute);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.media img{transition:none}.card:hover .media img{transform:none}}
+</style>
+<style>body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+
+
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="#top">Onur Sarıyıldız</a>
+    <ul><li><a href="#work">Work</a></li><li><a href="#map">Map</a></li><li><a href="#experience">Experience</a></li><li><a href="#competitions">Competitions</a></li><li><a href="#contact">Contact</a></li></ul>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="slides" id="slides" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="kicker">Design Group Project Manager · Moscow</div>
+      <h1>Onur<br>Sarıyıldız</h1>
+      <p>18 years delivering headquarters, resorts, malls and towers across Russia, Turkey and the CIS. I lead architecture, structural and MEP teams and keep design intent and construction in step.</p>
+      <div class="ctas"><a class="btn solid" href="#work">View projects</a><a class="btn ghost" href="#contact">Get in touch</a></div>
+    </div>
+    <div class="credit" id="credit"></div>
+  </div>
+
+  <div class="wrap">
+    <div class="figures" aria-label="Key figures">
+      <div class="fig"><b>755k m²</b><span>Total project area</span></div>
+      <div class="fig"><b>18 yrs</b><span>In design &amp; construction</span></div>
+      <div class="fig"><b>12</b><span>Major projects</span></div>
+      <div class="fig"><b>$140M+</b><span>Largest project budget</span></div>
+      <div class="fig"><b>400+</b><span>Personnel led on site</span></div>
+      <div class="fig"><b>85,500+</b><span>Drawing sheets issued</span></div>
+    </div>
+  </div>
+
+  <section class="wrap" aria-labelledby="now-h">
+    <div class="current">
+      <figure class="now-photo"><img src="img/yandex/01-exterior-park.webp" alt="Yandex Headquarters seen from the park side, Moscow City on the horizon" loading="lazy"></figure>
+      <div>
+        <span class="pill">Current · since 07/2022</span>
+        <h3 id="now-h">Yandex Headquarters</h3>
+        <p>Design Group Project Manager at ENKA for the new Yandex headquarters in Moscow, covering the Shell &amp; Core, WB1 and WB2 contracts. Primary liaison between Yandex, the Technical Employer MR-Group and subcontractors.</p>
+        <dl class="spec" style="margin-top:22px">
+          <dt>Site area</dt><dd>3.18 ha</dd>
+          <dt>Gross floor area</dt><dd>262,253 m²</dd>
+          <dt>Storeys</dt><dd>12–15 + 5 below ground</dd>
+          <dt>Height</dt><dd>74.7 m</dd>
+        </dl>
+      </div>
+      <ul style="margin:0">
+        <li>End-to-end design management to ENKA quality standards</li>
+        <li>Architecture, structural and MEP coordination, including raised floor and MEP integration</li>
+        <li>BOQ preparation, cost tracking and resource planning</li>
+        <li>RFI, approval and status closure processes</li>
+        <li>As-Built and FCD documentation on BIM360 / ACC for handover</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wrap" id="work" aria-labelledby="work-h" style="padding-top:0">
+    <div class="head">
+      <div><div class="label">Selected work · 2008 – 2021</div><h2 id="work-h">Projects</h2></div>
+      <div class="tabs" id="tabs" role="group" aria-label="Filter by sector"></div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="wrap" id="map" aria-labelledby="map-h" style="padding-top:0">
+    <div class="head"><div><div class="label">Russia · Turkey · Azerbaijan</div><h2 id="map-h">Project map</h2></div></div>
+    <div class="mapbox" id="mapbox"><p>The map loads from Yandex Maps.</p><iframe id="ymap" title="Project locations on Yandex Maps" loading="lazy" allowfullscreen></iframe></div>
+    <ol class="places" id="places"></ol>
+  </section>
+
+  <section class="wrap" id="experience" aria-labelledby="exp-h" style="padding-top:0">
+    <div class="head"><div><div class="label">Career</div><h2 id="exp-h">Experience</h2></div></div>
+    <div class="exp">
+      <div class="job"><div class="when">07/2022 – Present</div><div><h3>Design Group Project Manager</h3><div class="firm">ENKA · Yandex Headquarters</div></div><p>Design management for Shell &amp; Core, WB1 and WB2; multidisciplinary coordination, BOQ and cost tracking, client and Technical Employer liaison.</p></div>
+      <div class="job"><div class="when">2019 – 2022</div><div><h3>Design Group Project Manager</h3><div class="firm">Monolit Capitalstroy</div></div><p>Parallel portfolio of office, hotel, residential and education projects in Moscow; clash-free package coordination, MAPs, RFIs and method statements.</p></div>
+      <div class="job"><div class="when">01/2017 – 06/2018</div><div><h3>Design &amp; Site Manager</h3><div class="firm">Capital Partners · Six Senses Kaplankaya</div></div><p>On-site lead for a 5-star resort with 250+ personnel; 69 rooms and suites, 70 villas with full FF&amp;E, landscape and hardscape.</p></div>
+      <div class="job"><div class="when">2012 – 2017</div><div><h3>Design Manager</h3><div class="firm">ESTA · Mixed-use &amp; hospitality</div></div><p>Facade and skylight coordination, clash resolution and QA across Metropolis, OKO Tower interiors and Gorky Gorod.</p></div>
+      <div class="job"><div class="when">07/2011 – 09/2012</div><div><h3>Lead Project Architect</h3><div class="firm">DIA Holding FZCO · Shahdag</div></div><p>Architectural design and construction documentation for an alpine tourism complex, with Swiss Town Consult.</p></div>
+      <div class="job"><div class="when">09/2009 – 05/2011</div><div><h3>Project Architect</h3><div class="firm">Demirören Holding · İstiklal / Mama Shelter</div></div><p>Full architectural documentation; design reviews with Philippe Starck and Han Tümertekin.</p></div>
+      <div class="job"><div class="when">06/2008 – 08/2009</div><div><h3>Junior Architect</h3><div class="firm">TH-İDİL Architects · İpek Yolu University</div></div><p>Construction documentation and multidisciplinary package coordination for academic buildings.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap" id="competitions" aria-labelledby="comp-h" style="padding-top:0">
+    <div class="head"><div><div class="label">Recognition</div><h2 id="comp-h">Competitions</h2></div></div>
+    <div class="grid" id="comp"></div>
+  </section>
+
+  <section class="wrap" id="profile" aria-labelledby="prof-h" style="padding-top:0">
+    <div class="head"><div><div class="label">Profile</div><h2 id="prof-h">Skills &amp; background</h2></div></div>
+    <div class="cols">
+      <div><h3 class="label">Competencies</h3><ul>
+        <li>End-to-end design management</li><li>Arch / Structural / MEP coordination</li><li>RFIs, RFCs, ECNs</li><li>Drawings vs. BOQ tracking</li><li>QA &amp; site execution</li></ul></div>
+      <div><h3 class="label">Delivery</h3><ul>
+        <li>Subcontractor management</li><li>Procurement, logistics &amp; FF&amp;E</li><li>BIM360 / Autodesk Construction Cloud</li><li>Risk &amp; corrective action</li><li>Team development &amp; training</li></ul></div>
+      <div><h3 class="label">Languages</h3><ul>
+        <li>Turkish<small>Native</small></li><li>English<small>Full professional</small></li><li>Russian<small>Full professional</small></li><li>Spanish<small>Pre-intermediate</small></li></ul></div>
+      <div><h3 class="label">Education</h3><ul>
+        <li>B.Arch, Istanbul Technical University<small>2008</small></li><li>Spanish, Universidad de La Habana<small>6 months</small></li><li>Concrete research, Berlage Institute<small>Netherlands · 2005</small></li></ul></div>
+    </div>
+  </section>
+
+  <section class="wrap" id="contact" aria-labelledby="ct-h" style="padding-top:0">
+    <div class="contact">
+      <div class="label" id="ct-h">Contact</div>
+      <div class="mail" id="mail">onursariyildiz@gmail.com</div>
+      <div class="phones"><div><span class="label">Russia</span><a href="tel:+79260220831">+7 926 022 08 31</a></div><div><span class="label">Turkey</span><a href="tel:+905385283111">+90 538 528 31 11</a></div></div>
+      <div class="row"><small>Based in Moscow · Turkish, English, Russian · References on request</small><button class="btn" id="copy" type="button">Copy email</button></div>
+    </div>
+  </section>
+</main>
+<footer class="wrap"><span>© 2026 Onur Sarıyıldız</span><span>Architecture · Design Management · Construction</span></footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-labelledby="lb-title">
+  <div class="stage">
+    <div class="big" id="big"><img id="bigimg" alt=""><span class="cap" id="cap" hidden></span>
+      <button class="arrow prev" id="prev" type="button" aria-label="Previous image">‹</button>
+      <button class="arrow next" id="next" type="button" aria-label="Next image">›</button></div>
+    <div class="thumbs" id="thumbs"></div>
+  </div>
+  <div class="info">
+    <button class="close" id="close" type="button" aria-label="Close">✕</button>
+    <div class="label" id="lb-sector"></div>
+    <h3 id="lb-title"></h3>
+    <p class="lb-sub" id="lb-sub"></p>
+    <p class="where" id="lb-where"></p>
+    <dl class="spec" id="lb-specs"></dl>
+    <ul id="lb-scope"></ul>
+    <p class="note" id="lb-note"></p>
+  </div>
+</div>
+
+<script>
+const P=[
+ {n:"DM Tower Business Center",s:"Office",where:"Moscow, Russia",yr:"2020–21",firm:"Monolit Capitalstroy",role:"Design Group Project Manager",period:"01/2020 – 03/2021",
+  spec:[["Site area","0.46 ha"],["Project area","42,426 m²"],["Storeys","18"]],
+  dir:"dm-tower",img:["01-river-dusk.jpg","08-render-night-embankment.jpg","04-render-day-embankment.jpg","02-embankment-day.jpg","07-render-podium-dusk.jpg","03-lobby.jpg"]},
+ {n:"Glenver Garden Hotel",sub:"Designed as Hilton Garden Inn",s:"Hospitality",where:"Moscow, Russia",yr:"2019–21",firm:"Monolit Capitalstroy",role:"Design Group Project Manager",period:"04/2019 – 05/2021",
+  spec:[["Site area","0.23 ha"],["Storeys","11"],["Height","42.08 m"],["Budget","$115M"]],
+  dir:"hilton",img:["01-photo-night-glenver-garden.jpg","25-photo-restaurant-bar.jpg","24-photo-atrium-pendants.jpg","23-photo-business-lounge.jpg","19-photo-room-desk-tv.jpg","20-photo-room-headboard.jpg","22-photo-conference-hall.jpg",["12-render-lobby-lounge.jpg","Design visualisation"]]},
+ {n:"DM Apartments",s:"Residential",where:"Moscow, Russia",yr:"2019–21",firm:"Monolit Capitalstroy",role:"Design Group Project Manager",period:"09/2019 – 09/2021",
+  spec:[["Site area","1.607 ha"],["Project area","66,531 m²"],["Storeys","26"],["Height","85.15 m"]],
+  dir:"dm-apartments",img:["01-river-reflection-wide.jpg","06-render-aerial-masterplan.jpg","08-render-river-towers.jpg","09-render-towers-low-angle.jpg","11-render-playground.jpg","10-render-street.jpg","04-courtyard.jpg",["16-lobby-lounge.jpg","Interior design: HAAST"]]},
+ {n:"Kindergarten in the Heart of the Capital",s:"Education",where:"Moscow, Russia",yr:"2020–21",firm:"Monolit Capitalstroy",role:"Design Group Project Manager",period:"01/2020 – 02/2021",
+  spec:[["Site area","0.75 ha"],["Project area","4,200 m²"],["Storeys","3"],["Height","15.15 m"]],
+  dir:"kindergarten",img:["02-render-aerial-river.jpg","03-render-entrance-facade.jpg","01-render-aerial-site.jpg","04-render-corner.jpg","05-render-street-facade.jpg","06-render-courtyard.jpg","07-render-stair-tower.jpg"]},
+ {n:"Six Senses Kaplankaya",s:"Hospitality",where:"Bodrum, Turkey",yr:"2017–18",firm:"Capital Partners",role:"Design & Site Manager",period:"01/2017 – 06/2018",
+  spec:[["Site area","23.45 ha"],["Hotel","40,000 m²"],["Ridge villas","12,500 m²"],["Height","32.45 m"],["Budget","$52M"]],
+  scope:["69 rooms and suites, spa, F&B and common areas with full FF&E","66 ridge villas and 4 branded villas; 30 infinity pools","2,700 m² of granite paving; 250+ personnel on site"],
+  dir:"kaplankaya",img:["01-lounge-fireplace.jpg","13-spa-herb-wall-front.jpg","02-guestroom-sunset.jpg","09-bathroom-bathtub.jpg","17-aerial-beach-club.jpg","16-villa-pool-terrace.jpg","15-atrium-sea-view.jpg","14-restaurant-thatch-terrace.jpg"]},
+ {n:"Metropolis Mall & Carpark",s:"Retail",where:"Moscow, Russia",yr:"2014–16",firm:"ESTA",role:"Design & Site Manager",period:"09/2014 – 12/2016",
+  spec:[["Site area","1.645 ha"],["Mall","63,000 m²"],["Carpark","27,000 m²"],["Storeys","6"],["Height","34.93 m"],["Budget","$110M"]],
+  dir:"metropolis",img:["01-night-corner.jpg","05-aerial-overview.jpg","03-aerial-entrance.jpg","15-atrium-wide.jpg","11-skylight-gallery.jpg","07-gallery-zest.jpg","13-gallery-tsum.jpg","12-mall-street.jpg"]},
+ {n:"OKO Tower, Moscow City 16A",sub:"Residential interior fit-out · Tower built by others",s:"Residential",where:"Moscow, Russia",yr:"2014–15",firm:"ESTA",role:"Design Manager",period:"02/2014 – 07/2015",
+  spec:[["Scope","Residential interior fit-out"],["Project area","80,000 m²"],["Budget","$73M"]],
+  dir:"oko",img:[["06-exterior-towers-day.jpg","OKO towers, Moscow City · tower built by others"],"02-interior-living-kitchen.jpg","01-interior-living-room.jpg","10-interior-bathroom-tub-view.jpg","03-interior-bedroom.jpg","05-interior-kitchen-view.jpg"]},
+ {n:"Gorky Gorod Shopping Mall",s:"Retail",where:"Krasnaya Polyana, Sochi",yr:"2012–14",firm:"ESTA",role:"Design Office Chief",period:"09/2012 – 01/2014",
+  spec:[["Site area","0.92 ha"],["Project area","30,000 m²"],["Storeys","5"],["Height","31.85 m"],["Budget","$65M"]],
+  dir:"gorky-mall",img:["18-facade-night-sber.jpg","01-facade-day-sberbank.jpg","17-aquapark-panorama.jpg","05-corner-rounded.jpg","04-atrium-escalators.jpg","02-panoramic-lifts.jpg","11-aquapark-night.jpg","19-entrance-arch.jpg"]},
+ {n:"Gorky Gorod Apart Hotel",s:"Hospitality",where:"Krasnaya Polyana, Sochi",yr:"2012–14",firm:"ESTA",role:"Design Office Chief",period:"09/2012 – 01/2014",
+  spec:[["Site area","0.6 ha"],["Project area","21,000 m²"],["Storeys","8"],["Height","28.74 m"],["Budget","$27M"]],
+  dir:"gorky-apart",img:["04-facade-columns.jpg","02-street-aparts.jpg","03-square-facades.jpg","05-facade-lamp.jpg",["01-render-piazza-fountain.jpg","Design visualisation"]]},
+ {n:"Shahdag Tourism Complex",s:"Hospitality",where:"Shahdag, Azerbaijan",yr:"2011–12",firm:"DIA Holding FZCO",role:"Lead Project Architect",period:"07/2011 – 09/2012",
+  spec:[["Site area","4 ha"],["Project area","36,700 m²"],["Storeys","11"],["Height","28.90 m"],["Budget","$142.7M"]],
+  dir:"shahdag",img:["01-exterior-winter-dusk.jpg","06-hammam.jpg","08-suite.jpg","09-restaurant-screens.jpg","04-lobby-bar.jpg",["14-construction-frame.jpg","Under construction"],["13-construction-crane.jpg","Under construction"],["12-exterior-handover.jpg","Handover"]]},
+ {n:"Demirören İstiklal",s:"Retail",where:"Istanbul, Turkey",yr:"2009–11",firm:"Demirören Holding",role:"Project Architect",period:"09/2009 – 05/2011",
+  spec:[["Project area","26,500 m²"],["Storeys","11"],["Height","29.70 m"]],scope:["Mixed-use mall with Mama Shelter hotel","Design reviews with Philippe Starck and Han Tümertekin"],
+  dir:"demiroren",img:["01-facade-night-corner.jpg","04-atrium-skylight.jpg","05-escalators.jpg","02-entrance-istiklal.jpg","03-facade-bay-windows.jpg","06-atrium-galleries.jpg"]},
+ {n:"İpek Yolu University",sub:"Construction documentation",s:"Education",where:"Trabzon, Turkey",yr:"2008–09",firm:"TH-İDİL Architects",role:"Junior Architect",period:"06/2008 – 08/2009",
+  spec:[["Project area","109,426 m²"],["Height","21 m"]],scope:["Construction documentation for academic buildings","Coordination of architectural, structural, MEP and civil packages"],
+  note:"Visuals: master plan idea study, 2007.",
+  dir:"ipekyolu",img:["01-render-faculty-blocks.jpg","02-render-atrium-stair.jpg","05-model-aerial.jpg","03-render-hillside.jpg","06-board-masterplan.jpg","07-board-terrace-houses.jpg"]}
+];
+const C=[
+ {n:"Beyoğlu City Theatre",sub:"Architectural design competition",s:"4th Honorable Mention",where:"Istanbul, Turkey",yr:"2008",
+  spec:[["Organiser","Istanbul Metropolitan Municipality"],["Award","4th Honorable Mention"],["Year","2008"]],
+  scope:["Team: Orhan Şahinler, Fuat Şahinler, Onur Sarıyıldız, Ali Yücel Doğan, Doruk Karagöz, Nurdan Gürlesin"],
+  dir:"beyoglu",img:["01-aerial-perspective.jpg","02-perspective-galata.jpg","03-entrance-night.jpg","04-exploded-circulation.jpg","06-plan-auditorium-level.jpg","07-elevation-galata.jpg","08-section-aa.jpg","05-elevation-park.jpg"]},
+ {n:"“Robustness”",sub:"1st Concrete Design Competition",s:"3rd Prize",where:"Concrete design",yr:"2005",
+  spec:[["Award","3rd Prize"],["Year","2005"]],
+  scope:["Team: N. Onur Sönmez, Levent Fırat, Onur Sarıyıldız"],
+  dir:"robustness",img:["05-perspective-stairs.jpg","01-board-elevations.jpg","02-board-perspectives.jpg","04-perspectives-stack.jpg"]},
+ {n:"Carlsberg Architecture Competition",sub:"Urban regeneration proposal",s:"Entry",where:"Copenhagen, Denmark",yr:"Entry",
+  spec:[["Award","Entry"]],
+  scope:["Proposal for the Carlsberg brewery site: a car-free, mixed-use district active around the clock","Team: N. Onur Sönmez, Erdem Üngür, Onur Sarıyıldız"],
+  dir:"carlsberg",img:["01-axonometric.jpg","03-competition-board.jpg","02-section.jpg","04-perspective-square.jpg","05-site-plan.jpg"]}
+];
+
+const esc=s=>String(s).replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+const fileOf=i=>Array.isArray(i)?i[0]:i, capOf=i=>Array.isArray(i)?i[1]:"";
+const W=f=>f.replace(/\.jpg$/,".webp");
+const full=(p,i)=>`img/${p.dir}/${W(fileOf(i))}`, thumb=(p,i)=>`img/${p.dir}/t/${W(fileOf(i))}`, cover=p=>`img/${p.dir}/c/${W(fileOf(p.img[0]))}`;
+
+function cards(list,key){return list.map((p,i)=>`<button class="card" type="button" data-k="${key}" data-i="${i}" data-s="${esc(p.s)}" aria-label="Open ${esc(p.n)}">
+  <div class="media"><img loading="lazy" alt="${esc(p.n)}" src="${cover(p)}"><span class="badge">${esc(p.s)}</span><span class="count">${p.img.length} images</span></div>
+  <h3>${esc(p.n)}</h3>${p.sub?`<div class="sub">${esc(p.sub)}</div>`:""}<div class="meta"><span>${esc(p.where)}</span><span>${esc(p.yr)}</span></div></button>`).join("")}
+// hero: cross-fade through project cover photos
+(function(){
+ const box=document.getElementById("slides"),credit=document.getElementById("credit");
+ const S=P.filter(p=>p.dir!=="kindergarten").map(p=>({src:full(p,p.img[0]),t:`${p.n}, ${p.where}`}));
+ const start=S.findIndex(s=>s.src.includes("dm-apartments"));if(start>0)S.unshift(...S.splice(start,1));
+ const els=[];let i=0;
+ const get=k=>els[k]||(els[k]=Object.assign(box.appendChild(new Image()),{src:S[k].src,alt:"",decoding:"async"}));
+ const set=k=>{credit.style.opacity=0;setTimeout(()=>{credit.textContent=S[k].t;credit.style.opacity=.75},300)};
+ const first=get(0);const show0=()=>{first.classList.add("on");set(0)};first.complete?show0():first.onload=show0;
+ get(1);
+ setInterval(()=>{if(document.hidden)return;const n=(i+1)%S.length,nx=get(n);if(!nx.complete)return;
+  els[i].classList.remove("on");nx.classList.add("on");set(n);i=n;get((n+1)%S.length)},5500);
+})();
+
+const grid=document.getElementById("grid"),comp=document.getElementById("comp");
+grid.innerHTML=cards(P,"p"); comp.innerHTML=cards(C,"c");
+
+// filters
+const tabs=document.getElementById("tabs");
+["All",...new Set(P.map(p=>p.s))].forEach(s=>{const b=document.createElement("button");b.type="button";b.className="tab";b.id="tab-"+s;b.textContent=s;b.setAttribute("aria-pressed",s==="All");
+ b.onclick=()=>{tabs.querySelectorAll(".tab").forEach(t=>t.setAttribute("aria-pressed",t===b));grid.querySelectorAll(".card").forEach(c=>{const show=s==="All"||c.dataset.s===s;c.hidden=!show;c.style.display=show?"":"none"})};tabs.appendChild(b)});
+
+// lightbox
+const lb=document.getElementById("lb"),bigimg=document.getElementById("bigimg"),thumbs=document.getElementById("thumbs"),cap=document.getElementById("cap");
+let cur=null,idx=0,lastFocus=null;
+function show(k){idx=(k+cur.img.length)%cur.img.length;const it=cur.img[idx];bigimg.src=full(cur,it);bigimg.alt=`${cur.n}, image ${idx+1}`;
+ const c=capOf(it);cap.textContent=c;cap.hidden=!c;
+ thumbs.querySelectorAll("button").forEach((t,j)=>t.setAttribute("aria-current",j===idx));
+ new Image().src=full(cur,cur.img[(idx+1)%cur.img.length])}
+function open(p){cur=p;lastFocus=document.activeElement;
+ document.getElementById("lb-sector").textContent=p.period?`${p.s} · ${p.period}`:p.s;
+ document.getElementById("lb-title").textContent=p.n;
+ const sub=document.getElementById("lb-sub");sub.textContent=p.sub||"";sub.hidden=!p.sub;
+ document.getElementById("lb-where").textContent=p.where;
+ const rows=p.role?[["Role",p.role],["Company",p.firm],...p.spec]:p.spec;
+ document.getElementById("lb-specs").innerHTML=rows.map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("");
+ const sc=document.getElementById("lb-scope");sc.innerHTML=(p.scope||[]).map(s=>`<li>${esc(s)}</li>`).join("");sc.hidden=!p.scope;
+ const nt=document.getElementById("lb-note");nt.textContent=p.note||"";nt.hidden=!p.note;
+ thumbs.innerHTML=p.img.map((it,j)=>`<button type="button" aria-label="Image ${j+1}"><img alt="" loading="lazy" src="${thumb(p,it)}"></button>`).join("");
+ thumbs.querySelectorAll("button").forEach((t,j)=>t.onclick=()=>show(j));
+ lb.hidden=false;document.body.style.overflow="hidden";show(0);document.getElementById("close").focus()}
+function close(){lb.hidden=true;document.body.style.overflow="";bigimg.removeAttribute("src");lastFocus&&lastFocus.focus()}
+document.addEventListener("click",e=>{const c=e.target.closest(".card");if(c)open((c.dataset.k==="c"?C:P)[+c.dataset.i])});
+document.getElementById("close").onclick=close;
+document.getElementById("prev").onclick=()=>show(idx-1);
+document.getElementById("next").onclick=()=>show(idx+1);
+document.addEventListener("keydown",e=>{if(lb.hidden)return;if(e.key==="Escape")close();if(e.key==="ArrowLeft")show(idx-1);if(e.key==="ArrowRight")show(idx+1)});
+let tx=null;const big=document.getElementById("big");
+big.addEventListener("touchstart",e=>tx=e.touches[0].clientX,{passive:true});
+big.addEventListener("touchend",e=>{if(tx===null)return;const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>40)show(idx+(d<0?1:-1));tx=null});
+
+// project map: Yandex map widget, framed to show every pin
+const M=[
+ ["Yandex Headquarters","Moscow",37.564255,55.705496,"https://yandex.ru/maps/-/CXqlzFj2"],
+ ["DM Tower Business Center","Moscow",37.625990,55.695060,"https://yandex.ru/maps/-/CCQpeZBV1C"],
+ ["Glenver Garden Hotel","Moscow",37.642365,55.730021,"https://yandex.ru/maps/-/CCQlzPhUGD"],
+ ["DM Apartments","Moscow",37.624807,55.696752,"https://yandex.ru/maps/-/CCQpeZFP2B"],
+ ["Kindergarten in the Heart of the Capital","Moscow",37.515233,55.761761,"https://yandex.ru/maps/-/CCQpeZbR9B"],
+ ["Six Senses Kaplankaya","Bodrum, Turkey",27.345,37.383,"https://yandex.ru/maps/-/CBFOmBX9wC"],
+ ["Metropolis Mall & Carpark","Moscow",37.495461,55.823943,"https://maps.yandex.ru/-/CVDvmP9n"],
+ ["OKO Tower, Moscow City 16A","Moscow",37.533972,55.749271,"https://maps.yandex.ru/-/CVDvmL3d"],
+ ["Gorky Gorod Shopping Mall","Krasnaya Polyana, Sochi",40.263223,43.683784,"https://maps.yandex.ru/-/CVDvm-ov"],
+ ["Gorky Gorod Apart Hotel","Krasnaya Polyana, Sochi",40.264409,43.682690,"https://maps.yandex.ru/-/CVDzR42m"],
+ ["Shahdag Tourism Complex","Shahdag, Azerbaijan",48.136414,41.319424,"https://maps.yandex.ru/-/CVDzR64M"],
+ ["Demirören İstiklal","Istanbul, Turkey",28.980092,41.034902,"https://maps.yandex.ru/-/CVHemH6H"]
+];
+document.getElementById("places").innerHTML=M.map((m,i)=>`<li><span class="n">${i+1}</span><span><a href="${m[4]}" target="_blank" rel="noopener">${esc(m[0])}</a><small>${esc(m[1])}</small></span></li>`).join("");
+// Yandex Maps JS API: no ad strip, clustered Moscow pins. Paste a free key from developer.tech.yandex.ru into YKEY.
+const YKEY="";
+function widgetMap(){
+ const box=document.getElementById("mapbox"),f=document.getElementById("ymap");
+ const mx=lon=>(lon+180)/360, my=lat=>{const r=lat*Math.PI/180;return (1-Math.log(Math.tan(r)+1/Math.cos(r))/Math.PI)/2};
+ const xs=M.map(m=>mx(m[2])),ys=M.map(m=>my(m[3]));
+ const x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys);
+ const w=box.clientWidth||800,h=box.clientHeight||480;
+ const z=Math.max(2,Math.min(16,Math.floor(Math.min(Math.log2(w*0.8/(256*(x1-x0))),Math.log2(h*0.8/(256*(y1-y0)))))));
+ const cx=(x0+x1)/2,cy=(y0+y1)/2;
+ const lon=cx*360-180, lat=Math.atan(Math.sinh(Math.PI*(1-2*cy)))*180/Math.PI;
+ const pt=M.map((m,i)=>`${m[2]},${m[3]},pm2dbm${i+1}`).join("~");
+ f.src=`https://yandex.ru/map-widget/v1/?ll=${lon.toFixed(5)},${lat.toFixed(5)}&z=${z}&l=map&lang=en_US&pt=${encodeURIComponent(pt)}`;
+}
+(function(){
+ const box=document.getElementById("mapbox");let done=false;
+ const fail=()=>{if(!done){done=true;widgetMap()}};
+ const s=document.createElement("script");
+ s.src="https://api-maps.yandex.ru/2.1/?lang=en_US"+(YKEY?"&apikey="+YKEY:"");
+ s.onerror=fail;setTimeout(fail,8000);
+ s.onload=()=>{if(!window.ymaps)return fail();ymaps.ready(()=>{if(done)return;try{
+  done=true;document.getElementById("ymap").remove();
+  const el=document.createElement("div");el.style.cssText="position:absolute;inset:0";box.appendChild(el);
+  const map=new ymaps.Map(el,{center:[50,38],zoom:4,controls:["zoomControl"]},{suppressMapOpenBlock:true,yandexMapDisablePoiInteractivity:true});
+  map.behaviors.disable("scrollZoom");
+  const cl=new ymaps.Clusterer({preset:"islands#darkBlueClusterIcons",groupByCoordinates:false,clusterDisableClickZoom:false});
+  cl.add(M.map((m,i)=>new ymaps.Placemark([m[3],m[2]],{iconContent:String(i+1),hintContent:m[0],
+   balloonContentHeader:m[0],balloonContentBody:`${m[1]}<br><a href="${m[4]}" target="_blank" rel="noopener">Open in Yandex Maps</a>`},{preset:"islands#darkBlueIcon"})));
+  map.geoObjects.add(cl);
+  map.setBounds(cl.getBounds(),{checkZoomRange:true,zoomMargin:40});
+ }catch(e){done=false;fail()}})};
+ document.head.appendChild(s);
+})();
+
+// copy email
+document.getElementById("copy").addEventListener("click",e=>{const b=e.currentTarget,m=document.getElementById("mail");
+ const sel=()=>{const r=document.createRange();r.selectNodeContents(m);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Selected, press Ctrl+C"};
+ try{navigator.clipboard.writeText(m.textContent).then(()=>{b.textContent="Copied";setTimeout(()=>b.textContent="Copy email",1600)},sel)}catch(_){sel()}});
+</script>
+
+</body>
+</html>
